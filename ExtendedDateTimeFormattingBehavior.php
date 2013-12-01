@@ -37,7 +37,7 @@ class ExtendedDateTimeFormattingBehavior extends CBehavior {
 
 	/**
 	 * Formats date&time like "Today, 12:06 PM" or "Yesterday, 5:00 AM"
-	 * @param integer|string $timestamp Unix timestamp or ready to format in strtotime() string
+	 * @param integer|string $timestamp Unix timestamp or ready to parse in strtotime() string
 	 * @param string|null $dateWidth If <date> will be printed, it defines width of date.
 	 * It is passed to CDateFormatter::formatDateTime() to format <date>.
 	 * @param string $timeWidth Defines width of time.
@@ -58,7 +58,7 @@ class ExtendedDateTimeFormattingBehavior extends CBehavior {
 
 	/**
 	 * Formats date&time like "12 minutes ago" or "1 year ago"
-	 * @param integer|string $timestamp Unix timestamp or ready to format in strtotime() string
+	 * @param integer|string $timestamp Unix timestamp or ready to parse in strtotime() string
 	 * @param boolean $precisely Whether result should be composed of two time metrics.
 	 * @return string Localized interval
 	 */
@@ -79,27 +79,27 @@ class ExtendedDateTimeFormattingBehavior extends CBehavior {
 			else
 				$interval = $this->formatCenturyInterval($interval);
 		} elseif ($interval->y > 0) { // year
-			if ($precisely && $interval->m)
+			if ($precisely && $interval->m > 0)
 				$interval = $this->formatComplexInterval($interval, 'year', 'month');
 			else
 				$interval = $this->formatYearInterval($interval);
 		} elseif ($interval->m > 0) { // month
-			if ($precisely && $interval->d)
+			if ($precisely && $interval->d > 0)
 				$interval = $this->formatComplexInterval($interval, 'month', 'day');
 			else
 				$interval = $this->formatMonthInterval($interval);
 		} elseif ($interval->d > 0) { // day
-			if ($precisely && $interval->h)
+			if ($precisely && $interval->h > 0)
 				$interval = $this->formatComplexInterval($interval, 'day', 'hour');
 			else
 				$interval = $this->formatDayInterval($interval);
 		} elseif ($interval->h > 0) { // hour
-			if ($precisely && $interval->i)
+			if ($precisely && $interval->i > 0)
 				$interval = $this->formatComplexInterval($interval, 'hour', 'minute');
 			else
 				$interval = $this->formatHourInterval($interval);
 		} elseif ($interval->i > 0) { // minute
-			if ($precisely && $interval->s)
+			if ($precisely && $interval->s > 0)
 				$interval = $this->formatComplexInterval($interval, 'minute', 'second');
 			else // second
 				$interval = $this->formatMinuteInterval($interval);
