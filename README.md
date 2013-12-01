@@ -4,7 +4,7 @@ Available formatters:
 
 - `formatDateTimeReadable($timestamp, $dateWidth = 'medium', $timeWidth = 'medium')` formats date&time with pattern **(Today|Yesterday|&lt;date&gt;), &lt;time&gt;**.
  - **$dateWidth** is passed to `CDateFormatter::formatDateTime()` to format **&lt;date&gt;**
- - **$dateWidth** is passed to `CDateFormatter::formatDateTime()` to format **&lt;time&gt;**
+ - **$timeWidth** is passed to `CDateFormatter::formatDateTime()` to format **&lt;time&gt;**
 - `formatDateTimeInterval($timestamp, $precisely = false)` formats date&time as a date&time interval with pattern **&lt;metric value&gt; &lt;metric&gt; ago** or more complex **&lt;first metric value&gt; &lt;first metric&gt; and &lt;second metric value&gt; &lt;second metric&gt; ago**
  - **$precisely** is setted to **true**, interval will be composed of two metrics.
 
