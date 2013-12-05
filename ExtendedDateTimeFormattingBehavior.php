@@ -10,7 +10,6 @@
  * 	public function beforeAction($action) {
  * 		Yii::import('ext.ExtendedDateTimeFormattingBehavior.ExtendedDateTimeFormattingBehavior');
  * 		Yii::app()->dateFormatter->attachBehavior('ExtendedDateTimeFormatting', new ExtendedDateTimeFormattingBehavior());
- *
  * 		return parent::beforeAction($action);
  * 	}
  * </code>
@@ -112,7 +111,9 @@ class ExtendedDateTimeFormattingBehavior extends CBehavior {
 	/**
 	 * Formats complex (composed of two metrics) interval
 	 * @param DateInterval $interval
-	 * @param string $first
+	 * @param string $first First metric
+	 * @param string $second Second metric
+	 * @return string Localized complex interval
 	 */
 	private function formatComplexInterval($interval, $first, $second) {
 		return Yii::t($this->messagesCategory.'.main', '{first} and {second}', array(
