@@ -10,7 +10,7 @@ return array(
 	'{n} day|{n} days' => '{n} день|{n} дня|{n} дней',
 	'{n} month|{n} months' => '{n} месяц|{n} месяца|{n} месяцев',
 	'{n} year|{n} years' => '{n} год|{n} года|{n} лет',
-	'{n} century|{n} centuries' => '{n} век|{n} век|{n} веков',
+	'{n} century|{n} centuries' => '{n} век|{n} века|{n} веков',
 
 	'{first} and {second}' => '{first} и {second}',
 	'{interval} ago' => '{interval} назад',
