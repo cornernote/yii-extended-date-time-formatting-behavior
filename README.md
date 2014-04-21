@@ -13,13 +13,13 @@ Available formatters:
 ---
 How to use: attach this behavior to your dateFormatter instance.
 
-For example, add this in your base controller class (`Controller`):
+For example, add this in your base controller class (`Controller`) and base console command class (`ConsoleCommand`):
 ```php
-	public function beforeAction($action) {
-		Yii::import('ext.ExtendedDateTimeFormattingBehavior.ExtendedDateTimeFormattingBehavior');
-		Yii::app()->dateFormatter->attachBehavior('ExtendedDateTimeFormatting', new ExtendedDateTimeFormattingBehavior());
-		return parent::beforeAction($action);
-	}
+    public function init()
+    {
+        parent::init();
+        Yii::app()->dateFormatter->attachBehavior('ExtendedDateTimeFormatting', 'ext.ExtendedDateTimeFormattingBehavior.ExtendedDateTimeFormattingBehavior');
+    }
 ```
 ---
 
