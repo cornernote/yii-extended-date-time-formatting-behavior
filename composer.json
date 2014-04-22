@@ -3,5 +3,5 @@
     "description": "[Yii] Behavior for CDateFormater that adds some methods for extending date&time formatting.",
     "type": "library",
     "keywords": ["yii"],
-    "homepage": "https://github.com/wapmorgan/ExtendedDateTimeFormattingBehavior",
+    "homepage": "https://github.com/wapmorgan/ExtendedDateTimeFormattingBehavior"
 }
