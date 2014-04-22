@@ -1,5 +1,7 @@
 {
-    "name": "wapmorgan/ExtendedDateTimeFormattingBehavior",
+    "name": "wapmorgan/yii-extended-date-time-formatting-behavior",
     "description": "[Yii] Behavior for CDateFormater that adds some methods for extending date&time formatting.",
-    "type": "library"
+    "type": "library",
+    "keywords": ["yii"],
+    "homepage": "https://github.com/wapmorgan/ExtendedDateTimeFormattingBehavior",
 }
